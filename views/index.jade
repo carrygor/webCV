@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header#header
+    ul.nav_list#menu
+      li
+        a(href='#1stPage') 首页
+      li
+        a(href='#2ndPage') 个人资料
+      li
+        a(href='#3rdPage') 实习经历
+      li
+        a(href='#4thPage') 项目经验
+
+  #fullpage
+    .section.block.block_1(data-anchor="1stPage")
+      
+    .section.block.block_2(data-anchor="2ndPage") second
+    .section.block.block_3(data-anchor="3rdPage") 3rd
+    .section.block.block_4(data-anchor="4thPage") 4th
