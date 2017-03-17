@@ -4,7 +4,8 @@
 @block2: blue;
 @block3: yellow;
 @block4: grey;
-
+@block5: pink;
+@progress-height: 30px;
 
 
 body,html{
@@ -16,8 +17,14 @@ div{
   display: block;
   box-sizing: border-box;
 }
-ul,li,a{
+ul,li{
   list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+a:hover,a:visited,a:focus{
   text-decoration: none;
   color: #000;
 }
@@ -63,6 +70,7 @@ ul,li,a{
 .block{
   width: 100%;
   height: 100%;
+  text-align: center;
 
   &_1{
     background-color: @block1;
@@ -76,4 +84,41 @@ ul,li,a{
   &_4{
     background-color: @block4;
   }
+  &_5{
+    background-color: @block5;
+  }
+
+  .skill{
+    margin: 0 auto 20px;
+    font-size: 20px;
+    display: block;
+    width: 900px;
+
+    p{
+      display: inline-block;
+      margin: 0 10px 0 0;
+      height: @progress-height;
+      line-height: @progress-height;
+      vertical-align: top;
+      width: 100px;
+      padding: 0 10px;
+      text-align: right;
+      float: left;
+    }
+
+    .progress-skill{
+      display: block;
+      height: @progress-height;
+      margin: 0 auto 0px;
+      vertical-align: top;
+
+      .progress-bar{
+        height: @progress-height;
+        line-height: @progress-height;
+        font-size: 15px;
+      }
+    }
+  }
+
 }
+

@@ -1,0 +1,20 @@
+{
+  "message":"hello json1",
+  "skill": [
+    {
+      "name":"html",
+      "ability": "45%",
+      "color":"#337ab7"
+    },
+    {
+      "name":"css",
+      "ability": "55%",
+      "color":"#337ab7"
+    },
+    {
+      "name":"javascript",
+      "ability": "65%",
+      "color":"#337ab7"
+    }
+  ]
+}
