@@ -23,21 +23,67 @@
     </header>
     <div id="fullpage">
       <div data-anchor="1stPage" class="section block block_1">
-        <div class="home">封面</div>
+        <canvas id="canvas"></canvas>
+        <div class="container">
+          <div class="text">
+            <p class="p1">Hello</p>
+            <p class="p2">World</p>
+          </div><img v-bind:src="images.home" class="home_img">
+        </div>
       </div>
-      <div data-anchor="2ndPage" class="section block block_2"></div>
+      <div data-anchor="2ndPage" class="section block block_2">
+        <div class="container"><img v-bind:src="images.head" alt="头像" class="head">
+          <p class="info">何文浩</p>
+          <p class="info">华南农业大学</p>
+          <p class="info">计算机科学与技术专业</p>
+          <p class="info">tel:13242784286</p>
+          <p class="info">E-mail:724291943@qq.com</p>
+        </div>
+      </div>
       <div data-anchor="3rdPage" class="section block block_3">
         <div class="container">
+          <div class="title">
+            <h3>WEB前端</h3>
+            <h3>专业技能</h3>
+          </div>
           <div v-for="val in skill" class="skill">
             <p>{{val.name}}</p>
             <div class="progress progress-skill">
               <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" v-bind:style="{'width': val.ability,'background-color': val.color }" class="progress-bar progress-bar-striped active">{{val.ability}}</div>
             </div>
           </div>
+          <ul>
+            <li v-for="(val,key) in moreSkills" class="more_skill">{{key}}
+              <div v-if="val" class="remark">{{val}}</div>
+            </li>
+          </ul>
         </div>
       </div>
-      <div data-anchor="4thPage" class="section block block_4">4th</div>
-      <div data-anchor="5thPage" class="section block block_5">5th</div>
+      <div data-anchor="4thPage" class="section block block_4">
+        <div class="container">
+          <h3>实习经历</h3>
+          <ul>
+            <li v-for="val in internship"><a v-bind:href="val.link" class="company">{{val.company}}</a>
+              <p class="time">{{val.time}}</p>
+              <p class="position">{{val.position}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div data-anchor="5thPage" class="section block block_5">
+        <div class="container">
+          <h3>项目经验</h3>
+          <ul>
+            <li v-for="val in project"><a v-bind:href="val.link" target="blank">{{val.name}}</a>
+              <p class="work">{{val.work}}</p>
+              <p class="summary">{{val.summary}}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p>Copyright © 2017&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target="blank">粤ICP备16111690号</a></p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

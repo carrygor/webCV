@@ -16,14 +16,49 @@ block content
 
   #fullpage
     .section.block.block_1(data-anchor="1stPage")
-      .home 封面
+      canvas#canvas
+      .container
+        .text
+          p.p1 Hello
+          p.p2 World
+        img.home_img(v-bind:src="images.home")
     .section.block.block_2(data-anchor="2ndPage")
-
+      .container
+        img.head(v-bind:src="images.head",alt='头像')
+        p.info 何文浩
+        p.info 华南农业大学
+        p.info 计算机科学与技术专业
+        p.info tel:13242784286
+        p.info E-mail:724291943@qq.com
     .section.block.block_3(data-anchor="3rdPage")
       .container
+        .title
+          h3 WEB前端
+          h3 专业技能
         .skill(v-for="val in skill")
           p {{val.name}}
           .progress.progress-skill
             .progress-bar.progress-bar-striped.active(role='progressbar' aria-valuenow='45' aria-valuemin='0' aria-valuemax='100' v-bind:style="{'width': val.ability,'background-color': val.color }") {{val.ability}}
-    .section.block.block_4(data-anchor="4thPage") 4th
-    .section.block.block_5(data-anchor="5thPage") 5th
+        ul
+          li.more_skill(v-for="(val,key) in moreSkills") {{key}}
+            .remark(v-if="val") {{val}}
+    .section.block.block_4(data-anchor="4thPage")
+      .container
+        h3 实习经历
+        ul
+          li(v-for="val in internship")
+            a(v-bind:href="val.link").company {{val.company}}
+            p.time {{val.time}}
+            p.position {{val.position}}
+
+    .section.block.block_5(data-anchor="5thPage")
+      .container
+        h3 项目经验
+        ul
+          li(v-for="val in project")
+            a(v-bind:href="val.link" target='blank') {{val.name}}
+            p.work {{val.work}}
+            p.summary {{val.summary}}
+      .copyright
+        p Copyright © 2017&nbsp;&nbsp;
+          a(href='http://www.miitbeian.gov.cn/' target='blank') 粤ICP备16111690号

@@ -1,5 +1,9 @@
 {
-  "message":"hello json1",
+  "message":"hello Vue",
+  "images":{
+    "home":"/images/home.png",
+    "head":"/images/head.jpg"
+  },
   "skill": [
     {
       "name":"html",
@@ -15,6 +19,47 @@
       "name":"javascript",
       "ability": "65%",
       "color":"#337ab7"
+    }],
+  "moreSkills":{
+    "Jquery":"第一个javascript库",
+    "AJAX":"前后端沟通的桥梁",
+    "Zepto.js":"轻量版Jquery，不过好多bug啊，例如tap事件会触发两次",
+    "Bootstrap":"pc端响应式框架利器",
+    "less":"less is more",
+    "Node.js":"前后端，一起来",
+    "Grunt":"感觉这个轮子要精通html+css+js才用",
+    "Java":"上课必学，面向对象",
+    "jsp":"学了java，再了解下jsp也好啊",
+    "asp.net":"最近的项目要接的后端",
+    "PhotoShop":"切图用不少，设计倒不会",
+    "微信小程序":"",
+    "MySQL":""
+  },
+  "internship":[{
+    "company":"优社电商",
+    "time":"2016年12月-至今",
+    "position":"Web前端开发",
+    "link":"http://www.urshop.cn"
+  }],
+  "project":[
+    {
+      "name":"客多销商家管理系统官网",
+      "summary":"一套商家管理系统的官网，主要是静态页面",
+      "work":"独立完成",
+      "link":"http://www.keduoxiao.com"
+    },
+    {
+      "name":"歌帝梵婚庆网",
+      "summary":"歌帝梵巧克力，网上购买商品预定时间送达",
+      "work":"前端部分合作完成",
+      "link":"http://wedding.godiva.cn"
+    },
+    {
+      "name":"外卖点餐小程序",
+      "summary":"在微信小程序上下单点外卖",
+      "work":"前端部分",
+      "link":"javascript:void(0)"
     }
   ]
+
 }
