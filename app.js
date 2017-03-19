@@ -23,8 +23,8 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/resume', index);
+// app.use('/users', users);
 
 //get data
 app.get('/data',function (req,res) {

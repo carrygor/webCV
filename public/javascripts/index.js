@@ -33,10 +33,15 @@ $(function () {
 
         fullpageInit: function(){
 
+            var that = this
             $("#fullpage").fullpage({
                 navigation: true,
                 anchors: ['1stPage', '2ndPage','3rdPage','4thPage','5thPage'],
                 menu: '#menu',
+                navigationTooltips: ['首页', '个人资料','技能树','实习经历','项目经验'],
+                afterLoad: function(anchorLink,index){
+                    that.animate(anchorLink,index)
+                },
             })
 
         },
@@ -123,6 +128,24 @@ $(function () {
             }
             
             init()
+        },
+
+        animate: function (anchor,index) {
+
+            $(".progress-bar").each(function () {
+                var ability = $(this).attr('data-val')
+                $(this).css('width',ability)
+            })
+
+            var time = 0
+
+            $("[data-anchor='"+anchor+"']").find(".animate").each(function () {
+                var $this = $(this)
+                setTimeout(function () {
+                    $this.addClass("fadeIn")
+                },time)
+                time += 200
+            })
         }
 
     }

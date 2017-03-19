@@ -193,6 +193,10 @@ a:hover,a:visited,a:focus{
     display: block;
     width: 900px;
 
+    .progress-bar{
+      transition: width 1.5s cubic-bezier(0, 0, 0.2, 1);
+    }
+
     p{
       display: inline-block;
       margin: 0 10px 0 0;
@@ -242,6 +246,9 @@ a:hover,a:visited,a:focus{
         &:hover{
           color: #139780;
         }
+      }
+      a{
+        display: inline-block;
       }
       .time{
         font-size: 27px;
@@ -308,5 +315,26 @@ a:hover,a:visited,a:focus{
     &:hover{
       text-decoration: underline;
     }
+  }
+}
+
+.animate{
+  opacity: 0;
+}
+
+.fadeIn{
+  animation-name: fadeInUp;
+  animation-duration: .8s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  0%{
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
   }
 }

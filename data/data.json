@@ -7,17 +7,17 @@
   "skill": [
     {
       "name":"html",
-      "ability": "45%",
+      "ability": "75%",
       "color":"#337ab7"
     },
     {
       "name":"css",
-      "ability": "55%",
+      "ability": "80%",
       "color":"#337ab7"
     },
     {
       "name":"javascript",
-      "ability": "65%",
+      "ability": "70%",
       "color":"#337ab7"
     }],
   "moreSkills":{

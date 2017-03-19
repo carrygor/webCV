@@ -25,11 +25,11 @@ block content
     .section.block.block_2(data-anchor="2ndPage")
       .container
         img.head(v-bind:src="images.head",alt='头像')
-        p.info 何文浩
-        p.info 华南农业大学
-        p.info 计算机科学与技术专业
-        p.info tel:13242784286
-        p.info E-mail:724291943@qq.com
+        p.info.animate 何文浩
+        p.info.animate 华南农业大学
+        p.info.animate 计算机科学与技术专业
+        p.info.animate tel:13242784286
+        p.info.animate E-mail:724291943@qq.com
     .section.block.block_3(data-anchor="3rdPage")
       .container
         .title
@@ -38,24 +38,24 @@ block content
         .skill(v-for="val in skill")
           p {{val.name}}
           .progress.progress-skill
-            .progress-bar.progress-bar-striped.active(role='progressbar' aria-valuenow='45' aria-valuemin='0' aria-valuemax='100' v-bind:style="{'width': val.ability,'background-color': val.color }") {{val.ability}}
+            .progress-bar.progress-bar-striped.active(role='progressbar' v-bind:data-val="val.ability"  aria-valuenow='45' aria-valuemin='0' aria-valuemax='100' v-bind:style="{'width': '0','background-color': val.color }") {{val.ability}}
         ul
-          li.more_skill(v-for="(val,key) in moreSkills") {{key}}
+          li.more_skill.animate(v-for="(val,key) in moreSkills") {{key}}
             .remark(v-if="val") {{val}}
     .section.block.block_4(data-anchor="4thPage")
       .container
         h3 实习经历
         ul
           li(v-for="val in internship")
-            a(v-bind:href="val.link").company {{val.company}}
-            p.time {{val.time}}
-            p.position {{val.position}}
+            a.animate(v-bind:href="val.link").company {{val.company}}
+            p.animate.time {{val.time}}
+            p.animate.position {{val.position}}
 
     .section.block.block_5(data-anchor="5thPage")
       .container
         h3 项目经验
         ul
-          li(v-for="val in project")
+          li.animate(v-for="val in project")
             a(v-bind:href="val.link" target='blank') {{val.name}}
             p.work {{val.work}}
             p.summary {{val.summary}}
