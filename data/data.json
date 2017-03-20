@@ -44,21 +44,21 @@
   "project":[
     {
       "name":"客多销商家管理系统官网",
-      "summary":"一套商家管理系统的官网，主要是静态页面",
+      "summary":"根据设计要求写出静态网页，用到的技术为html+css+Jquery",
       "work":"独立完成",
       "link":"http://www.keduoxiao.com"
     },
     {
       "name":"歌帝梵婚庆网",
-      "summary":"歌帝梵巧克力，网上购买商品预定时间送达",
-      "work":"前端部分合作完成",
+      "summary":"本网站主要由服务器端渲染，协作完成页面布局，和独立完成业务逻辑，重写PC端和移动端的日期选择插件适应客户需求,主要技术为html+css+Jquery",
+      "work":"协作完成",
       "link":"http://wedding.godiva.cn"
     },
     {
-      "name":"外卖点餐小程序",
-      "summary":"在微信小程序上下单点外卖",
+      "name":"逗咖外卖平台（手机端）",
+      "summary":"根据设计给出的psd切出用户需要的页面",
       "work":"前端部分",
-      "link":"javascript:void(0)"
+      "link":"http://douka.midudu.com.cn/"
     }
   ]
 

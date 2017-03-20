@@ -9,6 +9,11 @@ $(function () {
 
         init: function () {
             this.vueInit()//vue页面渲染，插件应放在这里面
+            this.saySomething()
+        },
+
+        saySomething: function () {
+          console.log("本页面通过nodejs开发，由AJAX请求数据加载页面")
         },
 
         vueInit:function () {
@@ -132,10 +137,12 @@ $(function () {
 
         animate: function (anchor,index) {
 
-            $(".progress-bar").each(function () {
-                var ability = $(this).attr('data-val')
-                $(this).css('width',ability)
-            })
+            if(anchor == "3rdPage"){
+                $(".progress-bar").each(function () {
+                    var ability = $(this).attr('data-val')
+                    $(this).css('width',ability)
+                })
+            }
 
             var time = 0
 
