@@ -13,7 +13,7 @@ $(function () {
         },
 
         saySomething: function () {
-          console.log("本页面通过nodejs开发，由AJAX请求数据加载页面")
+          console.log("本页面通过nodejs开发，由AJAX请求数据加载页面，vue渲染")
         },
 
         vueInit:function () {

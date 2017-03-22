@@ -45,18 +45,18 @@
     {
       "name":"客多销商家管理系统官网",
       "summary":"根据设计要求写出静态网页，用到的技术为html+css+Jquery",
-      "work":"独立完成",
+      "work":"前端独立完成",
       "link":"http://www.keduoxiao.com"
     },
     {
       "name":"歌帝梵婚庆网",
-      "summary":"本网站主要由服务器端渲染，协作完成页面布局，和独立完成业务逻辑，重写PC端和移动端的日期选择插件适应客户需求,主要技术为html+css+Jquery",
+      "summary":"本网站主要由服务器端渲染，协作完成页面布局，和独立完成业务逻辑，写PC端和移动端的日期选择插件适应客户美观与逻辑需求,主要技术为html+css+Jquery(zepto.js,移动端)",
       "work":"协作完成",
       "link":"http://wedding.godiva.cn"
     },
     {
-      "name":"逗咖外卖平台（手机端）",
-      "summary":"根据设计给出的psd切出用户需要的页面",
+      "name":"逗咖外卖平台（移动端）",
+      "summary":"根据设计给出的psd切出用户需要的页面(html+css+javascript)",
       "work":"前端部分",
       "link":"http://douka.midudu.com.cn/"
     }
