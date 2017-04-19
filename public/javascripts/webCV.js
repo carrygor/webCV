@@ -27,6 +27,9 @@ $(function () {
                     })
 
                 },
+                fail: function (err) {
+                    console.log(err)
+                },
                 complete: function () {
                     //加载插件
                     that.fullpageInit()

@@ -4,9 +4,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose')
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var webCV = require('./routes/webCV');
+var blog = require('./routes/blog');
+
+// var db = mongoose.connect('mongodb://hewenhao:HEWENhao@5354@carrygor.com/blog')
+var options = {
+  user: 'hewenhao',
+  pass: 'my1stblog'
+}
+var db = mongoose.connect("mongodb://carrygor.com/blog",options);
+db.connection.on("error", function (error) {
+  console.log("connect fail：" + error);
+});
+db.connection.on("open", function () {
+  console.log("——connect success!——");
+});
 
 var app = express();
 
@@ -23,7 +37,9 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/resume', index);
+app.use('/',blog);
+
+app.use('/resume', webCV);
 // app.use('/users', users);
 
 //get data
@@ -31,6 +47,7 @@ app.get('/data',function (req,res) {
   var json = require('./data/data.json')
   res.send(json)
 })
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
