@@ -10,6 +10,7 @@ var BlogSchema = new Schema({
     author: { type: String },
     classification: { type: String },
     tag: { type: String },
+    content: { type: String },
     seoKeyWord: { type: String },
     seoDescription: { type: String },
     createTime: { type: Date, default: Date.now },

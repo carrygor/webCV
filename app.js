@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
+var cors = require('cors')
 
 var webCV = require('./routes/webCV');
 var blog = require('./routes/blog');
@@ -36,18 +37,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({
+  origin:['http://localhost:8080'],
+  methods:['GET','POST'],
+  alloweHeaders:['Conten-Type','Authorization']
+}))
 
-app.use('/',blog);
+//路由表
+require('./userRouters')(app)
 
-app.use('/resume', webCV);
+//api
+require('./userApi')(app)
+
+
 // app.use('/users', users);
-
-//get data
-app.get('/data',function (req,res) {
-  var json = require('./data/data.json')
-  res.send(json)
-})
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
