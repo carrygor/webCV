@@ -5,7 +5,7 @@ var express = require('express');
 var api = express.Router();
 var Blog = require('../models/blog')
 
-/* GET home page. */
+/* post blog */
 api.post('/postBlog', function(req, res, next) {
 
     var val = req.body
@@ -14,7 +14,7 @@ api.post('/postBlog', function(req, res, next) {
         if(error){
             console.log(error)
         }
-        console.log("ok")
+        console.log(val)
     })
 
     res.json({"msg":"hello"})

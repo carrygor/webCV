@@ -40,8 +40,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
   origin:['http://localhost:8080'],
   methods:['GET','POST'],
-  alloweHeaders:['Conten-Type','Authorization']
+  alloweHeaders:['Conten-Type','Authorization'],
+  credentials: true
 }))
+
+//跨域访问
+app.all('*', function(req, res, next) {
+  console.log("跨域中间件")
+  res.header("Access-Control-Allow-Origin", 'http://localhost:8080'); //需要显示设置来源
+  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Credentials",true); //带cookies
+  // res.header("X-Powered-By",' 3.2.1')
+  // res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
 
 //路由表
 require('./userRouters')(app)

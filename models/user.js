@@ -16,5 +16,4 @@ var UserSchema = new Schema({
     remark: { type: String, default: ""}
 })
 
-
 module.exports = mongoose.model('User',UserSchema)
