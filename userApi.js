@@ -7,6 +7,7 @@ function use(app) {
     var postBlog = require('./api/postBlog')
     var getBlogs = require('./api/getBlogs')
     var login = require('./api/login')
+    var sitebar = require('./api/site-bar')
     
     //get data
     app.get('/data',function (req,res) {
@@ -18,6 +19,7 @@ function use(app) {
     app.use('/api',postBlog)
     app.use('/api',getBlogs)
     app.use('/api',login)
+    app.use('/api',sitebar)
 
 }
 module.exports = use;

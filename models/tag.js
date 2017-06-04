@@ -6,10 +6,10 @@ var mongoose = require('mongoose')
 
 var TagSchema = new Schema({
     name: { type: String },
-    oracleId: { type: ObjectId },
+    oracleId: { type: String },
     createTime: { type: Date, default: Date.now},
     remark: { type: String, default: ""}
 })
 
 
-module.exports = mongoose.model('Blog',TagSchema)
+module.exports = mongoose.model('tag',TagSchema)

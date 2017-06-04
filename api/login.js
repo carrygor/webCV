@@ -18,15 +18,15 @@ api.post('/login',function (req, res) {
     if(loginStatus){
         username = req.cookies.user
         password = req.cookies.authStr
-        console.log('from cookie')
+        // console.log('from cookie')
     }
 
     if(formData.username){
         username = formData.username
         password = formData.password
-        console.log('from formData')
+        // console.log('from formData')
     }
-    console.log(username)
+    // console.log(username)
 
     // User.create(formData, function (err) {
     //     if(err){

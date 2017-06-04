@@ -46,7 +46,7 @@ app.use(cors({
 
 //跨域访问
 app.all('*', function(req, res, next) {
-  console.log("跨域中间件")
+  // console.log("跨域中间件")
   res.header("Access-Control-Allow-Origin", 'http://localhost:8080'); //需要显示设置来源
   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");

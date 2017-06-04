@@ -6,10 +6,10 @@ var mongoose = require('mongoose')
 
 var ClassificationSchema = new Schema({
     name: { type: String },
-    articleId: { type: ObjectId },
+    articleId: { type: String} ,
     createTime: { type: Date, default: Date.now},
     remark: { type: String, default: ""}
 })
 
 
-module.exports = mongoose.model('Blog',ClassificationSchema)
+module.exports = mongoose.model('classification',ClassificationSchema)
