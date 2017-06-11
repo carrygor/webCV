@@ -6,10 +6,22 @@ var mongoose = require('mongoose')
 
 var TagSchema = new Schema({
     name: { type: String },
-    oracleId: { type: String },
+    articleId: { type: String },
     createTime: { type: Date, default: Date.now},
     remark: { type: String, default: ""}
 })
 
+TagSchema.statics.findAll = function (callback) {
+  return this.model('Tag')
+    .find().sort({ createTime: -1 })
+    .exec(function (error, doc) {
+      if (error) {
+        console.log(error);
+        callback(null);
+      } else {
+        callback(doc);
+      }
+    });
+}
 
-module.exports = mongoose.model('tag',TagSchema)
+module.exports = mongoose.model('Tag',TagSchema)

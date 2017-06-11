@@ -11,5 +11,17 @@ var ClassificationSchema = new Schema({
     remark: { type: String, default: ""}
 })
 
+ClassificationSchema.statics.findAll = function (callback) {
+  return this.model('classification')
+    .find().sort({ createTime: -1 })
+    .exec(function (error, doc) {
+      if (error) {
+        console.log(error);
+        callback(null);
+      } else {
+        callback(doc);
+      }
+    });
+}
 
 module.exports = mongoose.model('classification',ClassificationSchema)

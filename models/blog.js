@@ -45,10 +45,60 @@ BlogSchema.statics.findByURL = function (customURL, callback) {
             //console.log(doc);
             if(doc.length == 0)
                 callback(null);
-            else callback(doc[0]);
+            else {
+                callback(doc[0])
+            }
         }
+    });
+}
+
+BlogSchema.statics.findByTag = function (tag, callback) {
+  return this.model('Blog').find({ tag: tag}, function (err, doc) {
+    if(err) {
+      console.log('find tag error:' + err)
+      callback(null)
+    } else {
+        callback(doc)
+    }
+  })
+}
+
+BlogSchema.statics.findByCategory = function (category, callback) {
+  return this.model('Blog').find({ category: category}, function (err, doc) {
+    if(err) {
+      console.log('find category error:' + err)
+      callback(null)
+    } else {
+      callback(doc)
+    }
+  })
+}
+
+BlogSchema.statics.findArticleId = function (callback) {
+  return this.model('Blog').find({ createTime:{ $gt: new Date(+new Date() - 3600000) } },
+    function (error, doc) {
+      if (error) {
+        console.log(error);
+        callback(-1);
+      } else if (doc.length <= 0) {
+        console.log('没有博客');
+        callback(-1);
+      } else {
+        var id = -1;
+        for (var i = doc.length - 1; i >= 0; i--) {
+          if (doc[i]._id != id) id = doc[i]._id;
+        }
+        callback(id);
+      }
     });
 }
 
 
 module.exports = mongoose.model('Blog',BlogSchema)
+
+
+
+
+
+
+

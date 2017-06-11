@@ -8,7 +8,9 @@ function use(app) {
     var getBlogs = require('./api/getBlogs')
     var login = require('./api/login')
     var sitebar = require('./api/site-bar')
-    
+    var getTag = require('./api/getTag')
+    var getCategory = require('./api/getCategory')
+
     //get data
     app.get('/data',function (req,res) {
         var json = require('./data/data.json')
@@ -20,6 +22,8 @@ function use(app) {
     app.use('/api',getBlogs)
     app.use('/api',login)
     app.use('/api',sitebar)
+    app.use('/api',getTag)
+    app.use('/api',getCategory)
 
 }
 module.exports = use;
