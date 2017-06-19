@@ -8,6 +8,7 @@ var BlogSchema = new Schema({
     customURL: { type: String, default: '' },
     title: { type: String },
     author: { type: String },
+    summary: { type: String},
     category: { type: String },
     tag: { type: String },
     content: { type: String },

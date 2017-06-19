@@ -63,7 +63,7 @@ api.post('/postBlog', function(req, res, next) {
         if(result) console.log('postBlog result:' + result)
     })
 
-    res.json({"msg":"hello"})
+    res.redirect('http://localhost:8080/')
 });
 
 module.exports = api;
