@@ -7,12 +7,22 @@ var mongoose = require('mongoose')
 var ReplySchema = new Schema({
     status: { type: String },
     replyer: { type: String },
-    replyerId: { type: ObjectId },
-    articleId: { type: ObjectId},
+    replyerEmail: { type: String },
+    articleId: { type: String},
     content: { type: String},
     replyTime: { type: Date, default: Date.now},
     remark: { type: String, default: ""}
 })
 
+ReplySchema.statics.findByArticleId = function (id, callback) {
+  return this.model('Reply').find({ articleId: id}, function (err, docs) {
+    if(err) {
+      console.log('find reply err:' + err)
+      callback(null)
+    } else {
+        callback(docs)
+    }
+  })
+}
 
-module.exports = mongoose.model('Blog',ReplySchema)
+module.exports = mongoose.model('Reply',ReplySchema)

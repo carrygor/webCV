@@ -65,12 +65,12 @@ BlogSchema.statics.findByTag = function (tag, callback) {
 }
 
 BlogSchema.statics.findByCategory = function (category, callback) {
-  return this.model('Blog').find({ category: category}, function (err, doc) {
+  return this.model('Blog').find({ category: category}, function (err, docs) {
     if(err) {
       console.log('find category error:' + err)
       callback(null)
     } else {
-      callback(doc)
+      callback(docs)
     }
   })
 }

@@ -10,6 +10,7 @@ function use(app) {
     var sitebar = require('./api/site-bar')
     var getTag = require('./api/getTag')
     var getCategory = require('./api/getCategory')
+    var postReply = require('./api/postReply')
 
     //get data
     app.get('/data',function (req,res) {
@@ -24,6 +25,7 @@ function use(app) {
     app.use('/api',sitebar)
     app.use('/api',getTag)
     app.use('/api',getCategory)
+    app.use('/api',postReply)
 
 }
 module.exports = use;
