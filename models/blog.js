@@ -35,6 +35,24 @@ BlogSchema.statics.findAll = function (callback) {
         });
 }
 
+BlogSchema.statics.findById = function (id, callback) {
+  return this.model('Blog').find({
+    _id: id
+  }, function (error, doc) {
+    if (error) {
+      console.log(error);
+      callback(null);
+    } else {
+      //console.log(doc);
+      if(doc.length == 0)
+        callback(null);
+      else {
+        callback(doc[0])
+      }
+    }
+  });
+}
+
 BlogSchema.statics.findByURL = function (customURL, callback) {
     return this.model('Blog').find({
         customURL: customURL

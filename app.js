@@ -38,16 +38,21 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({
-  origin:['http://localhost:8080'],
+  origin:['http://localhost:8080','http://carrygor.com'],
   methods:['GET','POST'],
   alloweHeaders:['Conten-Type','Authorization'],
   credentials: true
 }))
 
+//前端项目地址
+app.use('/blog', express.static(path.join(__dirname, 'index.html')));
+//前端资源地址
+app.use('/static', express.static(path.join(__dirname, 'static')));
+
 //跨域访问
 app.all('*', function(req, res, next) {
   // console.log("跨域中间件")
-  res.header("Access-Control-Allow-Origin", 'http://localhost:8080'); //需要显示设置来源
+  res.header("Access-Control-Allow-Origin", 'http://carrygor.com'); //需要显示设置来源//todo-前端地址
   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Credentials",true); //带cookies

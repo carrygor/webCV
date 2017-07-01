@@ -2,3 +2,5 @@ private/
 node_modules/
 .idea/
 /node_modules/
+/static
+index.html

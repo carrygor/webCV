@@ -9,7 +9,7 @@ function use(app) {
 
     app.use('/',index);
 
-    app.use('/webCV', webCV);
+    app.use('/resume', webCV);
 
 }
 module.exports = use;

@@ -16,4 +16,20 @@ var UserSchema = new Schema({
     remark: { type: String, default: ""}
 })
 
+UserSchema.statics.login = function (username, password, callback) {
+    return this.model('User').find({
+      username: username
+    }, function (err, doc) {
+      if (err) {
+        callback('错误')
+      } else if (doc.length == 0){
+          callback('该用户不存在')
+      } else if (doc[0].password != password) {
+          callback('用户信息已更改')
+      } else {
+          callback(null)
+      }
+    })
+}
+
 module.exports = mongoose.model('User',UserSchema)

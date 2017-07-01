@@ -11,6 +11,7 @@ function use(app) {
     var getTag = require('./api/getTag')
     var getCategory = require('./api/getCategory')
     var postReply = require('./api/postReply')
+    var editBlog = require('./api/editBlog')
 
     //get data
     app.get('/data',function (req,res) {
@@ -26,6 +27,7 @@ function use(app) {
     app.use('/api',getTag)
     app.use('/api',getCategory)
     app.use('/api',postReply)
+    app.use('/api',editBlog)
 
 }
 module.exports = use;
